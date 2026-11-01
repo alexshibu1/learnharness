@@ -233,6 +233,8 @@ function startServer(port) {
 					// (no env injection anymore: a spawn-time copy would shadow every
 					// settings-page key change until restart; env wins over file).
 					LH_AUTH_FILE: AUTH_FILE(),
+					AWS_PROFILE: process.env.AWS_PROFILE || "default",
+					AWS_REGION: process.env.AWS_REGION || "us-east-1",
 					LH_DESKTOP_SERVER: "1",
 					LH_DESKTOP_API_SECRET: desktopAPISecret,
 				},
